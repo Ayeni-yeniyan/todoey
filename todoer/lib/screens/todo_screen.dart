@@ -51,7 +51,7 @@ class TodoScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: const EdgeInsets.only(top: 20),
                     child: Text.rich(
                       style: const TextStyle(
                         fontSize: 60,

@@ -27,7 +27,7 @@ class AddTaskWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late String taskTitle;
+    late String taskTitle = '';
     return Container(
       height: 800,
       decoration: const BoxDecoration(
@@ -62,12 +62,15 @@ class AddTaskWidget extends StatelessWidget {
                     fontSize: 20,
                   )),
               onPressed: () {
-                Provider.of<TaskData>(context, listen: false).addTask(Task(
-                  title: taskTitle,
-                  id: getID,
-                ));
+                if (taskTitle.isEmpty) {
+                } else {
+                  Provider.of<TaskData>(context, listen: false).addTask(Task(
+                    title: taskTitle,
+                    id: getID,
+                  ));
 
-                Navigator.pop(context);
+                  Navigator.pop(context);
+                }
               },
               child: const Text('Add task'),
             )

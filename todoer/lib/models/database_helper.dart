@@ -24,7 +24,6 @@ class DatabaseHelper {
   Future<List<Task>> getDataBaseTaskList() async {
     final db = await openTaskDataBase();
     final List<Map<String, dynamic>> taskMaps = await db.query(tableName);
-    db.close();
 
     return List.generate(taskMaps.length, (index) {
       bool intDone = false;
@@ -60,8 +59,8 @@ class DatabaseHelper {
     );
   }
 
-  Future<void> deleteTask(int id) async {
+  Future<void> deleteTask(int taskid) async {
     final db = await openTaskDataBase();
-    await db.delete(tableName, where: '$id=?', whereArgs: [id]);
+    await db.delete(tableName, where: '$id=?', whereArgs: [taskid]);
   }
 }

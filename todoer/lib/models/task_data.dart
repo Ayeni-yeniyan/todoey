@@ -38,8 +38,9 @@ class TaskData extends ChangeNotifier {
     getTaskListFromDatabase();
   }
 
-  void deleteTask(Task task) {
-    _databaseHelper.deleteTask(task.id);
+  void deleteTask(int id) {
+    _databaseHelper.deleteTask(id);
+    print(id);
     getTaskListFromDatabase();
   }
 }

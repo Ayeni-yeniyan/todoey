@@ -59,7 +59,7 @@ class TaskList extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () {
-                            taskData.deleteTask(task);
+                            taskData.deleteTask(task.id);
                             Navigator.pop(context);
                           },
                           icon: const Icon(
