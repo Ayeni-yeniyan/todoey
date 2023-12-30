@@ -14,24 +14,21 @@ class TaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return ListTile(
       splashColor: Colors.blue,
       onLongPress: onLongPress,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-                fontSize: 18,
-                decoration: isDone ? TextDecoration.lineThrough : null),
-          ),
-          Checkbox(
-            activeColor: Colors.blue,
-            value: isDone,
-            onChanged: checkBOxCallBack,
-          )
-        ],
+      horizontalTitleGap: 5,
+      contentPadding: EdgeInsets.zero,
+      title: Text(
+        title,
+        style: TextStyle(
+            fontSize: 18,
+            decoration: isDone ? TextDecoration.lineThrough : null),
+      ),
+      trailing: Checkbox(
+        activeColor: Colors.blue,
+        value: isDone,
+        onChanged: checkBOxCallBack,
       ),
     );
   }
